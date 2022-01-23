@@ -14,19 +14,18 @@ Uso de Javascript Puro(Vanilla JS), de Flexbox para obter responsividade, técni
 
 ## Prototipagem com Figma
 
-Nesse [link](https://www.figma.com/file/86FIiUJdrxZm5DdHI2Wl3J/Player-Musica?node-id=0%3A1 "Layout no Figma") você visualiza o projeto de Layout no Figma. 
+Nesse [link](https://www.figma.com/file/86FIiUJdrxZm5DdHI2Wl3J/Player-Musica?node-id=0%3A1 "Layout no Figma") você visualiza o projeto de Layout diretamente no Figma. 
 
 
-## Quais habilidades você adquiri com esse projeto?
+## Quais habilidades você adquire com esse projeto?
 
-Técnicas de acessibilidade como aria-expanded ao abrir a playlist
-Nem todo evento tem bublble event
-Eventos e suas diferenças: click, timeupdate, DOMLoadedContent x Load
-Passar um objeto para JSON ou como ler esse objeto depois de adicionado itens: JSON.stringfy() e JSON.parse()
-Qual tipo de armazenamento é interessante para seu projeto: localStorage x sessionStorage
+    * Técnicas de acessibilidade como aria-expanded ao abrir a playlist
+    * Nem todo evento tem bublble event
+    * Eventos e suas diferenças: click, timeupdate, DOMLoadedContent x Load
+    * Passar um objeto para JSON ou como ler esse objeto depois de adicionado itens: JSON.stringfy() e JSON.parse()
+    * Qual tipo de armazenamento é interessante para seu projeto: localStorage x sessionStorage
 
 Alguns pontos importantes do player:
-
 
 ```javascript
 
@@ -110,14 +109,11 @@ $albumInfo.addEventListener('click', (e) => {
     }
 });
 
-
-
-
 ```
 
-
 ### Live do projeto
-player rodando projeto Github
+
+[Player online](https://alessandradocouto.github.io/player-musica/)
 
 
 
