@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fav icon -->
+    <link rel="shortcut icon" type="image/png" href="icon/favicon-16x16.png" sizes="16x16">
+    <link rel="shortcut icon" href="icon/favicon-16x16.ico">
+    <link rel="shortcut icon" type="image/png" href="icon/favicon-32x32.png" sizes="32x32">
+    <link rel="shortcut icon" href="icon/favicon-32x32.ico">
+    <title>Player Musica</title>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <!-- meu css -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="container">
+
+            <section class="album">
+                <article class="album__info">
+                    <button aria-label="muda tema do player para escuro" class="btn__theme" type="button">
+                        <img class="icon__mode" src="assets/icon/dark-mode.svg" alt="tema escuro">
+                    </button>
+                    <h2 class="album__info__title">
+                        Tocando agora
+                    </h2>
+                    <button role="menu" aria-label="abre lista de música" aria-haspopup="true" aria-controls="aside" class="btn__playlist" aria-expanded="false" type="button">
+                        <img class="icon__menu" src="assets/icon/playlist-dark-mode.svg" alt="tema escuro">
+                    </button>
+                </article>
+                
+                <div class="album__img">
+                    <img src="" class="cover" alt="">
+                </div>
+                
+                <article class="album__music">
+                    <h1 class="album__title"></h1>
+                    <p class="album__text"></p>
+                </article>
+
+            </section>
+
+            <section class="container__item">
+                <p class="container__start">00:00</p>
+                <article class="container__line">
+                    <div class="container__progress"></div>
+                </article>
+                <p class="container__end">00:00</p>
+            </section>
+
+            <audio src="" id="audio"></audio>
+
+            <section class="container__btn">
+                <button class="btn" aria-label="musica anterior" type="button">
+                    <img id="prev" src="assets/icon/anterior-dark.svg" alt="anterior">  
+                </button>
+                <button class="btn btn__large" aria-label="musica tocando" type="button">
+                    <img id="play" src="assets/icon/play-dark.svg" alt="tocando">
+                    
+                </button>
+                <button class="btn" aria-label="proxima musica" type="button">
+                    <img id="next" src="assets/icon/proximo-dark.svg" alt="proxima">
+                </button>
+            </section>
+
+            <section class="container__side">
+                <article class="aside">
+                    <article class="aside__group">
+                        <button aria-label="voltar ao player de música" class="btn__back" type="button" >
+                            <img class="icon__back" src="assets/icon/voltar.svg" alt="seta para voltar">
+                        </button>
+                    </article>
+                </article>
+            </section>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
