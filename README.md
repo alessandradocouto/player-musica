@@ -1,5 +1,6 @@
 # Player de música com HTML, CSS e Javascript
-foto com apresentação do projeto
+ 
+ ![apresentação do projeto](projeto-criado.png)
 
 ## Projeto
 
