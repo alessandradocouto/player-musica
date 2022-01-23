@@ -38,7 +38,7 @@ let music = [
 let songIndex = 0;
 
 
-// funcao que atualiza os detalhes das musicas
+// funcao que toca a musica com o indice do array
 
 function currentSong(music){
     const [band,song] = music.name.split('-');
@@ -50,17 +50,19 @@ function currentSong(music){
     $cover.alt = `${song} - ${band}`;
 }
 
-// tocar a música com as imagens corretas,mesmo em modo escuro
+// tocar a música com os botoes correspondente ao tema claro
+// ou escuro
 function playSong(){
     // add class .play no pai do player
     $btnPlay.classList.add('play');
 
-    // verificar se img tem o atributo src de qual imagem
+    // verificar se img tem o atributo src de modo claro
     if ($btnPlay.getAttribute('src') === 'assets/icon/play.svg') {
         $btnPlay.removeAttribute('src', 'assets/icon/play.svg');
         $btnPlay.setAttribute('src', 'assets/icon/pause.svg');
     }
 
+    // verificar se img tem o atributo src de modo escuro
     if ($btnPlay.getAttribute('src') === 'assets/icon/play-dark.svg') {
         $btnPlay.removeAttribute('src', 'assets/icon/play-dark.svg');
         $btnPlay.setAttribute('src', 'assets/icon/pause-dark.svg');
@@ -69,7 +71,7 @@ function playSong(){
     audio.play();
 }
 
-// pausa a música e troca a img do button pra play
+// pausa a música e troca a img do botao pra play
 function pauseSong(){
 
     $btnPlay.classList.remove('play');
@@ -115,13 +117,17 @@ function nextSong(){
 
 
 // pega a barra que está tocando e 
-// vai atualizando conforme o tamanho do width
+// vai atualizando conforme o tamanho do width da música
 function animationProgress(e){
 
+    // pega o tempo atual da música
     const currentTime = e.target.currentTime;
+    // pega a duração total da musica
     const duration = e.target.duration;
+    // faz o calculo para achar o percentual de width no momento
     const percentWidth = (currentTime / duration) * 100;
     
+    //muda o valor de width da barra de progresso conforme a música vai tocando
     $containerProgress.setAttribute('style',`width:${percentWidth}%`);
 }
 
@@ -326,7 +332,7 @@ function playlistMarkup(){
 }
 
 
-// abre  ou fecha menu playlist
+// abre ou fecha menu playlist
 // colocar em modo acessibilidade
 function toggleMenu(){
 

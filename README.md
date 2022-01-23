@@ -14,7 +14,41 @@ Uso de Javascript Puro(Vanilla JS), de Flexbox para obter responsividade, técni
 
 Nesse [link](https://www.figma.com/file/86FIiUJdrxZm5DdHI2Wl3J/Player-Musica?node-id=0%3A1 "Layout no Figma") você visualiza o projeto de Layout no Figma. 
 
-### Passo a passo do código com Javascript
+### O que aprendi com esse projeto?
+
+
+```javascript
+
+
+// pega a barra que está tocando e 
+// vai atualizando conforme o tamanho do width da música
+function animationProgress(e){
+
+    // pega o tempo atual da música
+    const currentTime = e.target.currentTime;
+    // pega a duração total da musica
+    const duration = e.target.duration;
+    // faz o calculo para achar o percentual de width no momento
+    const percentWidth = (currentTime / duration) * 100;
+    
+    //muda o valor de width da barra de progresso conforme a música vai tocando
+    $containerProgress.setAttribute('style',`width:${percentWidth}%`);
+}
+
+
+// o evento 'timeupdate'não é um bubble event,nao precisamos fazer o click pelo parente(pai)
+
+audio.addEventListener('timeupdate',(e) => {
+    // enquanto o audio está tocando...
+    //calculo o width da barra de progresso(cor rosa)
+    animationProgress(e);
+    // calculo tempo inicial e final da música
+    screenMin(e);
+    // qual música está tocando e mostro ao usuário
+    playlistMarkup();
+});
+
+```
 
 
 ### Live do projeto
