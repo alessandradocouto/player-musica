@@ -19,11 +19,11 @@ Nesse [link](https://www.figma.com/file/86FIiUJdrxZm5DdHI2Wl3J/Player-Musica?nod
 
 ## Quais habilidades você adquire com esse projeto?
 
-    * Técnicas de acessibilidade como aria-expanded ao abrir a playlist
-    * Nem todo evento tem bublble event
-    * Eventos e suas diferenças: click, timeupdate, DOMLoadedContent x Load
-    * Passar um objeto para JSON ou como ler esse objeto depois de adicionado itens: JSON.stringfy() e JSON.parse()
-    * Qual tipo de armazenamento é interessante para seu projeto: localStorage x sessionStorage
+- Técnicas de acessibilidade como aria-expanded ao abrir a playlist
+* Nem todo evento tem bublble event
+* Eventos e suas diferenças: click, timeupdate, DOMLoadedContent x Load
+* Passar um objeto para JSON ou como ler esse objeto depois de adicionado itens: JSON.stringfy() e JSON.parse()
+* Qual tipo de armazenamento é interessante para seu projeto: localStorage x sessionStorage
 
 Alguns pontos importantes do player:
 
