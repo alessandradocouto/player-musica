@@ -525,7 +525,7 @@ $albumInfo.addEventListener('click', (e) => {
 });
 
 
-// quanco acabar a múscia, toca a proxima música
+// quando acabar a múscia, toca a proxima música
 audio.addEventListener('ended',nextSong);
 
 // a mudanca do tema persisti ao recarregar a página, 
