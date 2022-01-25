@@ -1,5 +1,6 @@
 const $container = document.querySelector('.container');
 const $containerBtn = document.querySelector('.container__btn');
+const $btnContainer = document.querySelectorAll('.btn');
 const $btnPrev = document.querySelector('#prev');
 const $btnPlay = document.querySelector('#play');
 const $btnNext = document.querySelector('#next');
@@ -14,6 +15,7 @@ const $albumInfo = document.querySelector('.album__info');
 const $cover = document.querySelector('.cover');
 const $containerSide = document.querySelector('.container__side');
 const $aside = document.querySelector('.aside');
+const $asideMusic = document.querySelector('.aside__music');
 const $iconMode = document.querySelector('.icon__mode');
 const $iconMenu = document.querySelector('.icon__menu');
 const $btnTheme = document.querySelector('.btn__theme');
@@ -238,15 +240,19 @@ function playlist(music){
         
         const asideHtml =
         `
-        <article class="aside__music">
-            <div class="aside__img">
-                <img src="assets/image/${el.name}.jpg"  id="aside__cover" alt="${el.name}">
-            </div>
-            <article class="aside__info">
-                <h2 class="aside__title">${name}</h2>
-                <p class="aside__text">${band}</p>
+        <button class="aside__link" type="button">
+            <article class="aside__music">
+                <div class="aside__img">
+                    <img src="assets/image/${el.name}.jpg"  id="aside__cover" alt="${el.name}">
+                </div>
+                
+                <article class="aside__info">
+                    <h2 class="aside__title">${name}</h2>
+                    <p class="aside__text">${band}</p>
+                </article>
             </article>
-        </article>`;
+        </button>
+        `;
 
         $aside.insertAdjacentHTML('beforeend', asideHtml);
 
@@ -260,24 +266,25 @@ function playlist(music){
 function getTouch(title, text){
     
     // varrer o array de músicas
-    music.map((el, index) => {
-        
-        // desestruturação: o el vai me dar o nome da banda 
-        // e o nome da música
-        // atraves de uma eliminaçao do hifen e formando um array
-        const [band, name] = el.name.split('-');
-        // [band,name] = ['Cpm 22','Desconfio']
-        
+
+    music.filter( (el, index) => {
+
+        // desestruturação: o el traz nome da musica e banda 
+        // split faz eliminaçao do hifen e forma um array
+        const [band, song] = el.name.split(' - ');
+
         // pego o nome e indice para passar
         // pra funcao de currentSong(music[index])
         // e toco a musica chamando a funcao playSong()
-        if(name === title && band === text){
+        if(text===band && title === song){
             songIndex = index;
             currentSong(music[songIndex]);
             playSong();
-        };
+        }
+
     });
 }
+
 
 // identifico o nome da banda e o nome da música
 function getPlayContainerAside(e){
@@ -456,6 +463,39 @@ $containerBtn.addEventListener('click', (e) => {
 });
 
 
+// acessibilidade, uso do teclado
+// quando o usuario apertar 'enter'(13)
+// botao de prev, play, next fará suas funções
+// se a música tiver tocando, ela pausa
+$btnContainer.forEach(el => {
+
+    el.addEventListener('keydown', (e) => {
+        
+        if(e.keyCode === 13){
+            
+            if(e.target.firstElementChild.id === 'prev')
+                prevSong();
+
+            if(e.target.firstElementChild.id === 'play' ){
+
+                if(e.target.firstElementChild.classList.contains('play')){
+                    pauseSong();
+                }
+                else{
+                    playSong();
+                }
+            }
+
+            if(e.target.firstElementChild.id === 'next')
+                nextSong();
+        }
+
+        e.stopPropagation();
+    });
+});
+
+
+
 // clicar no progesso da barra da música, posso
 // arrastar a barra para frente
 $containerLine.addEventListener('click', (e) => {
@@ -511,6 +551,9 @@ $aside.addEventListener('click', (e) => {
 });
 
 
+
+
+
 // abrir a playlist e salvar a mudança de tema
 $albumInfo.addEventListener('click', (e) => {
     e.preventDefault();
@@ -521,6 +564,21 @@ $albumInfo.addEventListener('click', (e) => {
     if(e.target.className === 'btn__theme' || e.target.className === 'icon__mode'){
         darkLightMode();
         setTheme();
+    }
+});
+
+
+// torna acessivel escolher as musicas da playlist
+// com o tab e enter do teclado
+$aside.addEventListener('keypress', (e) => {
+    
+    if(e.key === 'Enter'){
+        if(e.target.className === 'aside__link'){
+            const title = e.target.innerText.split('\n');
+            const [song, space, band] = title;
+            getTouch(song, band);
+            playlistMarkup(e);        
+        }
     }
 });
 

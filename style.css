@@ -6,6 +6,8 @@
     padding: 0;
 }
 
+*:focus { outline: 2px solid rgb(33, 183, 221); }
+
 html{
     font-family: 'Lato', sans-serif;
 }
@@ -168,14 +170,21 @@ html{
     max-width: 100%;
 }
 
+.aside__link{
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+
+.aside__info:hover{
+    background-color: rgba(23, 23, 23, 0.66);
+    transition: all .3s ease;
+}
+
 .aside__music{
     width: 100%;
     padding: 1em 0.3em;
-}
-
-.aside__music:hover{
-    background-color: rgba(23, 23, 23, 0.66);
-    transition: all .3s ease;
 }
 
 .aside__img{
@@ -190,11 +199,11 @@ html{
     
 }
 
-.aside__info{
-    cursor: pointer;
+.aside__info{  
     width: 100%;
     padding: 0.6em 0.75em;
 }
+
 
 .aside__title{
     font-size: 0.95em;

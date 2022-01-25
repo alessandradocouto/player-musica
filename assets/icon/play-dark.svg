@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.9899495"
-     inkscape:cx="-184.95762"
-     inkscape:cy="32.599321"
+     inkscape:zoom="1.4"
+     inkscape:cx="120.12424"
+     inkscape:cy="-49.728111"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -51,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -61,12 +61,12 @@
      id="layer1"
      transform="translate(0.66399513,-288.80684)">
     <path
-       style="fill:#241c1c;fill-opacity:1;stroke:#241c1c;stroke-width:0.59278077;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.59278077;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 3.4401761,291.42597 v 5.98686 l 4.3906871,-2.99342 z"
        id="path1013"
        inkscape:connector-curvature="0" />
     <path
-       style="opacity:0.98000004;fill:none;fill-opacity:1;stroke:#241c1c;stroke-width:0.65883023;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:0.98000004;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.65883023;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="path1529"
        sodipodi:type="arc"
        sodipodi:cx="4.9485703"
