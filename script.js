@@ -586,14 +586,14 @@ $aside.addEventListener('keypress', (e) => {
 // quando acabar a múscia, toca a proxima música
 audio.addEventListener('ended',nextSong);
 
-// a mudanca do tema persisti ao recarregar a página, 
+// a mudanca do tema persiste ao recarregar a página, 
 // mas espera a hierarquia do DOM ser totalmente construída
 window.addEventListener('DOMContentLoaded', setTheme);
 
 
 
 
-// inicializar as musicas e forma as playlists
+// inicializar as musicas e formar as playlists
 
 currentSong(music[songIndex]);
 
