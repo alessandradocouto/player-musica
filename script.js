@@ -240,19 +240,17 @@ function playlist(music){
         
         const asideHtml =
         `
-        <button class="aside__link" type="button">
-            <article class="aside__music">
-                <div class="aside__img">
-                    <img src="assets/image/${el.name}.jpg"  id="aside__cover" alt="${el.name}">
-                </div>
-                
+        <article class="aside__music">
+            <div class="aside__img">
+                <img src="assets/image/${el.name}.jpg"  id="aside__cover" alt="${el.name}">
+            </div>
+            <button class="aside__link" type="button">
                 <article class="aside__info">
                     <h2 class="aside__title">${name}</h2>
                     <p class="aside__text">${band}</p>
                 </article>
-            </article>
-        </button>
-        `;
+            </button>
+        </article>`;
 
         $aside.insertAdjacentHTML('beforeend', asideHtml);
 
