@@ -270,11 +270,14 @@ function getTouch(title, text){
         // desestruturação: o el traz nome da musica e banda 
         // split faz eliminaçao do hifen e forma um array
         const [band, song] = el.name.split(' - ');
+        // a desestruturacao acima nao funciona com o uso 
+        //do tab, para contornar esse problema faremos 2 tipos de desestruturacao
+        const [b, s] = el.name.split('-');
 
         // pego o nome e indice para passar
         // pra funcao de currentSong(music[index])
         // e toco a musica chamando a funcao playSong()
-        if(text===band && title === song){
+        if( (text===band && title === song) || (text===b && title===s) ){
             songIndex = index;
             currentSong(music[songIndex]);
             playSong();
